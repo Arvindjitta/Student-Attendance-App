@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\SBN\\Desktop\\MyThirdApp\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-az\\values-az.xml",
+            "outputFile": "C:\\Users\\SBN\\Desktop\\MyThirdApp\\MyThirdApp\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-az\\values-az.xml",
             "map": [
                 {
                     "source": "C:\\Users\\SBN\\.gradle\\caches\\transforms-2\\files-2.1\\f1f143ad0dd7c07f0d794dc99b99f974\\jetified-play-services-base-16.0.1\\res\\values-az\\values.xml",
