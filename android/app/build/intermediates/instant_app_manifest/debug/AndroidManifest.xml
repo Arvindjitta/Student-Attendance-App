@@ -1,37 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.thirdapp"
+    package="com.awesomeproject"
     android:targetSandboxVersion="2"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="21"
-        android:targetSdkVersion="27" />
+        android:minSdkVersion="16"
+        android:targetSdkVersion="28" />
 
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-
-    <!-- OPTIONAL PERMISSIONS, REMOVE WHATEVER YOU DO NOT NEED -->
-    <!-- <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" /> -->
-    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-
-    <!-- These require runtime permissions on M -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.READ_CALENDAR" />
-    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <!-- Required to access Google Play Licensing -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- Required to access Google Play Licensing -->
     <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
     <!--
          Required to keep CPU alive while downloading files
@@ -42,26 +22,24 @@
          Required to poll the state of the network connection
         and respond to changes
     -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Required to check whether Wi-Fi is enabled -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.STORAGE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" /> <!-- <uses-permission android:name="android.permission.WRITE_SETTINGS" /> -->
-    <!-- END OPTIONAL PERMISSIONS -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Required to read and write the expansion files on shared storage -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
-        android:name="com.thirdapp.MainApplication"
+        android:name="com.awesomeproject.MainApplication"
         android:allowBackup="false"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true" >
         <activity
-            android:name="com.thirdapp.MainActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:name="com.awesomeproject.MainActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
             android:label="@string/app_name"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustResize" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -72,17 +50,8 @@
         <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
 
         <provider
-            android:name="com.RNFetchBlob.Utils.FileProvider"
-            android:authorities="com.thirdapp.provider"
-            android:exported="false"
-            android:grantUriPermissions="true" >
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths" />
-        </provider>
-        <provider
             android:name="com.imagepicker.FileProvider"
-            android:authorities="com.thirdapp.provider"
+            android:authorities="com.awesomeproject.provider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -90,37 +59,14 @@
                 android:resource="@xml/provider_paths" />
         </provider>
         <provider
-            android:name="expo.modules.filesystem.FileSystemFileProvider"
-            android:authorities="com.thirdapp.FileSystemFileProvider"
+            android:name="com.RNFetchBlob.Utils.FileProvider"
+            android:authorities="com.awesomeproject.provider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_system_provider_paths" />
+                android:resource="@xml/provider_paths" />
         </provider>
-
-        <service
-            android:name="expo.modules.location.services.LocationTaskService"
-            android:exported="false" />
-
-        <activity
-            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-            android:exported="false"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-
-        <service
-            android:name="io.nlopez.smartlocation.activity.providers.ActivityGooglePlayServicesProvider$ActivityRecognitionService"
-            android:exported="false" />
-        <service
-            android:name="io.nlopez.smartlocation.geofencing.providers.GeofencingGooglePlayServicesProvider$GeofencingService"
-            android:exported="false" />
-        <service
-            android:name="io.nlopez.smartlocation.geocoding.providers.AndroidGeocodingProvider$AndroidGeocodingService"
-            android:exported="false" />
     </application>
 
 </manifest>
