@@ -1,4 +1,4 @@
-#Sun May 03 21:35:53 IST 2020
-base.0=C\:\\Users\\JITTA\\Desktop\\MyThirdApp\\MyThirdApp\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+#Sat Aug 01 16:07:31 IST 2020
+base.0=C\:\\Users\\JITTA\\Desktop\\React-Native\\MyThirdApp\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

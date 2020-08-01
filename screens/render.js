@@ -11,7 +11,8 @@ export default class Criminal extends Component {
       // data: [],
       cover:null,
       title:'',
-      isLoading: true
+      isLoading: true,
+      // resp:'',
     };
   }
 
@@ -19,7 +20,7 @@ export default class Criminal extends Component {
   
   componentDidMount() {
 
-    RNFetchBlob.fetch('GET','http://book-test-cover.herokuapp.com/api/',
+    RNFetchBlob.fetch('GET','http://book-test-cover.herokuapp.com/api/render/',
      {
       Authorization: 'Bearer access-token',
       otherHeader: 'foo',
@@ -30,7 +31,7 @@ export default class Criminal extends Component {
       .then((data) => {
         console.log('getting data from fetch', data)
        
-        this.setState({ cover: data.cover, title: data.title, isLoading: false });
+        this.setState({ cover: data.resp, isLoading: false });
         console.log(this.state.cover)
       })
 
@@ -54,23 +55,21 @@ export default class Criminal extends Component {
               width: 400,
               // height: 100,
             }}
-            source={{uri: 'http://book-test-cover.herokuapp.com' + this.state.cover}}
+            source={{uri: 'http://book-test-cover.herokuapp.com/' + this.state.cover}}
             resizeMode="contain"
           />
-        
-      </View>      
+      </View>         
     );
   }
 };
 
 
 const styles = StyleSheet.create({
-
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: 'aqua',
-      padding:10,
-    },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'aqua',
+    padding:10,
+  },
   })
