@@ -4,8 +4,6 @@
 
 # Face Recognition Based Attendance System 
 
-
-
 Automatic face recognition (AFR) technologies
 have made many improvements in the changing world. Smart
 Attendance using Real-Time Face Recognition is a real-world
@@ -26,3 +24,15 @@ Keywords: Face recognition, Face detection,Convolution Neural Network(CNN).
 FRONTEND:- 
 FRONTEND MODIFIED UI (Just UI):- 
 BACKEND :- 
+
+## Languages
+
+python
+JavaScript
+
+## Technologies used
+
+[React Native]
+[Heroku]
+[Django]
+
