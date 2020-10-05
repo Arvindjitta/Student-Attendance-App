@@ -1,3 +1,4 @@
+![header](https://github.com/Arvindjitta/MyThirdApp/blob/master/face-recognition.png)
 
 Automatic face recognition (AFR) technologies
 have made many improvements in the changing world. Smart
@@ -16,3 +17,4 @@ so that the face of the student can be easily recognized for their
 attendance so that the attendance database can be easily reflected automatically.
 
 Keywords: Face recognition, Face detection,Convolution Neural Network(CNN).
+
