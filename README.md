@@ -1,6 +1,10 @@
 ![header](https://github.com/Arvindjitta/MyThirdApp/blob/master/face-recognition.png)
 
+
+
 # Face Recognition Based Attendance System 
+
+
 
 Automatic face recognition (AFR) technologies
 have made many improvements in the changing world. Smart
