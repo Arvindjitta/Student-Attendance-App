@@ -18,3 +18,6 @@ attendance so that the attendance database can be easily reflected automatically
 
 Keywords: Face recognition, Face detection,Convolution Neural Network(CNN).
 
+FRONTEND:- 
+FRONTEND MODIFIED UI (Just UI):- 
+BACKEND :- 
