@@ -9,115 +9,118 @@
 9        android:targetSdkVersion="28" />
 10
 11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-11-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\debug\AndroidManifest.xml:5:5-77
-11-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\debug\AndroidManifest.xml:5:22-75
+11-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\debug\AndroidManifest.xml:5:5-77
+11-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\debug\AndroidManifest.xml:5:22-75
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:4:5-67
-12-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:4:22-64
-13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- Required to access Google Play Licensing -->
-13-->[com.facebook.flipper:flipper:0.33.1] C:\Users\JITTA\.gradle\caches\transforms-2\files-2.1\5dc7f0c970363801277b61901697c657\jetified-flipper-0.33.1\AndroidManifest.xml:16:5-76
-13-->[com.facebook.flipper:flipper:0.33.1] C:\Users\JITTA\.gradle\caches\transforms-2\files-2.1\5dc7f0c970363801277b61901697c657\jetified-flipper-0.33.1\AndroidManifest.xml:16:22-73
-14    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
-14-->[:rn-fetch-blob] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-73
-14-->[:rn-fetch-blob] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:22-70
-15    <!--
-16         Required to keep CPU alive while downloading files
-17        (NOT to keep screen awake)
-18    -->
-19    <uses-permission android:name="android.permission.WAKE_LOCK" />
-19-->[:rn-fetch-blob] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:5-68
-19-->[:rn-fetch-blob] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:22-65
-20    <!--
-21         Required to poll the state of the network connection
-22        and respond to changes
-23    -->
-24    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Required to read and write the expansion files on shared storage -->
-24-->[:rn-fetch-blob] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:5-79
-24-->[:rn-fetch-blob] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:22-76
-25    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-25-->[:rn-fetch-blob] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:33:5-81
-25-->[:rn-fetch-blob] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:33:22-78
-26
-27    <application
-27-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:6:5-26:19
-28        android:name="com.awesomeproject.MainApplication"
-28-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:8:7-38
-29        android:allowBackup="false"
-29-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:12:7-34
-30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-30-->[androidx.core:core:1.1.0] C:\Users\JITTA\.gradle\caches\transforms-2\files-2.1\4f509a65121478d6153615d7ef5b7c5f\core-1.1.0\AndroidManifest.xml:24:18-86
-31        android:debuggable="true"
-32        android:icon="@mipmap/ic_launcher"
-32-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:10:7-41
-33        android:label="@string/app_name"
-33-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:9:7-39
-34        android:roundIcon="@mipmap/ic_launcher_round"
-34-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:11:7-52
-35        android:theme="@style/AppTheme"
-35-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:13:7-38
-36        android:usesCleartextTraffic="true" >
-36-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:7:7-42
-37        <activity
-37-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:14:7-24:18
-38            android:name="com.awesomeproject.MainActivity"
-38-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:15:9-37
-39            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
-39-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:17:9-86
-40            android:label="@string/app_name"
-40-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:16:9-41
-41            android:launchMode="singleTask"
-41-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:18:9-40
-42            android:windowSoftInputMode="adjustResize" >
-42-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:19:9-51
-43            <intent-filter>
-43-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:20:9-23:25
-44                <action android:name="android.intent.action.MAIN" />
-44-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:21:13-65
-44-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:21:21-62
-45
-46                <category android:name="android.intent.category.LAUNCHER" />
-46-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:22:13-73
-46-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:22:23-70
-47            </intent-filter>
-48        </activity>
-49        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-49-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:25:7-84
-49-->C:\Users\JITTA\Desktop\React-Native\MyThirdApp\android\app\src\main\AndroidManifest.xml:25:17-81
-50
-51        <provider
-51-->[:react-native-image-picker] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:10:9-18:20
-52            android:name="com.imagepicker.FileProvider"
-52-->[:react-native-image-picker] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-56
-53            android:authorities="com.awesomeproject.provider"
-53-->[:react-native-image-picker] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-60
-54            android:exported="false"
-54-->[:react-native-image-picker] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-37
-55            android:grantUriPermissions="true" >
-55-->[:react-native-image-picker] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-47
-56            <meta-data
-56-->[:react-native-image-picker] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-17:58
-57                android:name="android.support.FILE_PROVIDER_PATHS"
-57-->[:react-native-image-picker] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:17-67
-58                android:resource="@xml/provider_paths" />
-58-->[:react-native-image-picker] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-55
-59        </provider>
-60        <provider
-60-->[:rn-fetch-blob] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:36:9-44:20
-61            android:name="com.RNFetchBlob.Utils.FileProvider"
-61-->[:rn-fetch-blob] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:37:13-62
-62            android:authorities="com.awesomeproject.provider"
-62-->[:rn-fetch-blob] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:38:13-60
-63            android:exported="false"
-63-->[:rn-fetch-blob] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:39:13-37
-64            android:grantUriPermissions="true" >
-64-->[:rn-fetch-blob] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:40:13-47
-65            <meta-data
-65-->[:react-native-image-picker] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-17:58
-66                android:name="android.support.FILE_PROVIDER_PATHS"
-66-->[:react-native-image-picker] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:17-67
-67                android:resource="@xml/provider_paths" />
-67-->[:react-native-image-picker] C:\Users\JITTA\Desktop\React-Native\MyThirdApp\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-55
-68        </provider>
-69    </application>
-70
-71</manifest>
+12-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:4:5-67
+12-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:4:22-64
+13    <uses-permission android:name="android.permission.CAMERA" />
+13-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:5:5-64
+13-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:5:22-62
+14    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- Required to access Google Play Licensing -->
+14-->[com.facebook.flipper:flipper:0.33.1] C:\Users\Jitta_Home\.gradle\caches\transforms-2\files-2.1\7c29eaf22c25b84d50091b4ba9b38dd0\jetified-flipper-0.33.1\AndroidManifest.xml:16:5-76
+14-->[com.facebook.flipper:flipper:0.33.1] C:\Users\Jitta_Home\.gradle\caches\transforms-2\files-2.1\7c29eaf22c25b84d50091b4ba9b38dd0\jetified-flipper-0.33.1\AndroidManifest.xml:16:22-73
+15    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
+15-->[:rn-fetch-blob] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-73
+15-->[:rn-fetch-blob] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:22-70
+16    <!--
+17         Required to keep CPU alive while downloading files
+18        (NOT to keep screen awake)
+19    -->
+20    <uses-permission android:name="android.permission.WAKE_LOCK" />
+20-->[:rn-fetch-blob] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:5-68
+20-->[:rn-fetch-blob] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:22-65
+21    <!--
+22         Required to poll the state of the network connection
+23        and respond to changes
+24    -->
+25    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Required to read and write the expansion files on shared storage -->
+25-->[:rn-fetch-blob] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:5-79
+25-->[:rn-fetch-blob] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:22-76
+26    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+26-->[:rn-fetch-blob] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:33:5-81
+26-->[:rn-fetch-blob] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:33:22-78
+27
+28    <application
+28-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:7:5-27:19
+29        android:name="com.awesomeproject.MainApplication"
+29-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:9:7-38
+30        android:allowBackup="false"
+30-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:13:7-34
+31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+31-->[androidx.core:core:1.1.0] C:\Users\Jitta_Home\.gradle\caches\transforms-2\files-2.1\4f509a65121478d6153615d7ef5b7c5f\core-1.1.0\AndroidManifest.xml:24:18-86
+32        android:debuggable="true"
+33        android:icon="@mipmap/ic_launcher"
+33-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:11:7-41
+34        android:label="@string/app_name"
+34-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:10:7-39
+35        android:roundIcon="@mipmap/ic_launcher_round"
+35-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:12:7-52
+36        android:theme="@style/AppTheme"
+36-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:14:7-38
+37        android:usesCleartextTraffic="true" >
+37-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:8:7-42
+38        <activity
+38-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:15:7-25:18
+39            android:name="com.awesomeproject.MainActivity"
+39-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:16:9-37
+40            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+40-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:18:9-86
+41            android:label="@string/app_name"
+41-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:17:9-41
+42            android:launchMode="singleTask"
+42-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:19:9-40
+43            android:windowSoftInputMode="adjustResize" >
+43-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:20:9-51
+44            <intent-filter>
+44-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:21:9-24:25
+45                <action android:name="android.intent.action.MAIN" />
+45-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:22:13-65
+45-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:22:21-62
+46
+47                <category android:name="android.intent.category.LAUNCHER" />
+47-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:23:13-73
+47-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:23:23-70
+48            </intent-filter>
+49        </activity>
+50        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+50-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:26:7-84
+50-->C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\android\app\src\main\AndroidManifest.xml:26:17-81
+51
+52        <provider
+52-->[:react-native-image-picker] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:10:9-18:20
+53            android:name="com.imagepicker.FileProvider"
+53-->[:react-native-image-picker] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-56
+54            android:authorities="com.awesomeproject.provider"
+54-->[:react-native-image-picker] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-60
+55            android:exported="false"
+55-->[:react-native-image-picker] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-37
+56            android:grantUriPermissions="true" >
+56-->[:react-native-image-picker] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-47
+57            <meta-data
+57-->[:react-native-image-picker] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-17:58
+58                android:name="android.support.FILE_PROVIDER_PATHS"
+58-->[:react-native-image-picker] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:17-67
+59                android:resource="@xml/provider_paths" />
+59-->[:react-native-image-picker] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-55
+60        </provider>
+61        <provider
+61-->[:rn-fetch-blob] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:36:9-44:20
+62            android:name="com.RNFetchBlob.Utils.FileProvider"
+62-->[:rn-fetch-blob] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:37:13-62
+63            android:authorities="com.awesomeproject.provider"
+63-->[:rn-fetch-blob] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:38:13-60
+64            android:exported="false"
+64-->[:rn-fetch-blob] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:39:13-37
+65            android:grantUriPermissions="true" >
+65-->[:rn-fetch-blob] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:40:13-47
+66            <meta-data
+66-->[:react-native-image-picker] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-17:58
+67                android:name="android.support.FILE_PROVIDER_PATHS"
+67-->[:react-native-image-picker] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:17-67
+68                android:resource="@xml/provider_paths" />
+68-->[:react-native-image-picker] C:\Users\Jitta_Home\Documents\GitHub\Student-Attendance-App\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-55
+69        </provider>
+70    </application>
+71
+72</manifest>

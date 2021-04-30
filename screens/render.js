@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { ActivityIndicator, FlatList, Text, View, Image, TouchableOpacity, StyleSheet} from 'react-native';
+import { ActivityIndicator, FlatList, Text, View, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import RNFetchBlob from 'rn-fetch-blob';
+import * as Progress from 'react-native-progress';
+
 
 
 export default class Criminal extends Component {
@@ -9,28 +11,28 @@ export default class Criminal extends Component {
 
     this.state = {
       // data: [],
-      cover:null,
-      title:'',
+      cover: null,
+      title: '',
       isLoading: true,
       // resp:'',
     };
   }
 
-  
-  
+
+
   componentDidMount() {
 
-    RNFetchBlob.fetch('GET','http://book-test-cover.herokuapp.com/api/render/',
-     {
-      Authorization: 'Bearer access-token',
-      otherHeader: 'foo',
-      'Content-Type': 'application/Json',
+    RNFetchBlob.fetch('GET', 'http://book-test-cover.herokuapp.com/api/render/',
+      {
+        Authorization: 'Bearer access-token',
+        otherHeader: 'foo',
+        'Content-Type': 'application/Json',
       }
-      )
+    )
       .then((response) => response.json())
       .then((data) => {
         console.log('getting data from fetch', data)
-       
+
         this.setState({ cover: data.resp, isLoading: false });
         console.log(this.state.cover)
       })
@@ -39,26 +41,27 @@ export default class Criminal extends Component {
       .finally(() => {
         this.setState({ isLoading: false });
       });
-    }
+  }
 
 
   render() {
 
-    const { cover, title, isLoading  } = this.state;
+    const { cover, title, isLoading } = this.state;
     return (
       <View style={styles.container}>
-        <Text>{this.state.title}</Text>  
-          <Image
-            style={{
-              flex: 1,
-              alignSelf: 'center',
-              width: 400,
-              // height: 100,
-            }}
-            source={{uri: 'http://book-test-cover.herokuapp.com/' + this.state.cover}}
-            resizeMode="contain"
-          />
-      </View>         
+        <Text>{this.state.title}</Text>
+
+        <Image
+          style={{
+            flex: 1,
+            alignSelf: 'center',
+            width: 400,
+            // height: 100,
+          }}
+          source={{ uri: 'http://book-test-cover.herokuapp.com/' + this.state.cover }}
+          resizeMode="contain"
+        />
+      </View>
     );
   }
 };
@@ -70,6 +73,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'aqua',
-    padding:10,
+    padding: 10,
   },
-  })
+})

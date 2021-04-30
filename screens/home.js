@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, Button } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, Button, PermissionsAndroid } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import RNFetchBlob from 'rn-fetch-blob';
+import * as Progress from 'react-native-progress';
 
 const options = {
   title: '',
@@ -17,7 +18,32 @@ export default class Home extends Component {
       pic: null,
       cover: null,
       title: '',
+      total: null,
+      // written: null,
+      // total: 1000,
     };
+  }
+
+  componentDidMount() {
+    if (Platform.OS === 'android') {
+      PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.CAMERA).then((result) => {
+        if (result) {
+          console.log("Permission is OK for camera checked");
+        } else {
+          PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.CAMERA).then((result) => {
+            if (result) {
+              console.log("Permission is OK for camera requested");
+            } else if (result) {
+              console.log("User refuse");
+            }
+            else {
+              console.log("User refuse");
+
+            }
+          });
+        }
+      });
+    }
   }
 
   updateValue(text, field) {
@@ -73,10 +99,16 @@ export default class Home extends Component {
           data: this.state.cover,
         },
       ]
-    ).then(resp => {
+    ).uploadProgress({ count: 10 }, (written, total) => {
+      // this.setState({ written: written })
+      total = written / total
+      this.setState({ total: total })
+      console.log('uploaded', total);
+    }).then(resp => {
       console.log(resp);
       alert('your image uploaded successfully');
       this.setState({ avatarSource: null });
+      this.setState({ total: null });
     });
   };
 
@@ -86,39 +118,62 @@ export default class Home extends Component {
 
     return (
       <View style={styles.container}>
-          <TextInput
+
+        <TextInput
           placeholder="Name"
           style={styles.input}
           onChangeText={text => this.updateValue(text, 'title')}
         />
+
         <View style={styles.container2}>
           <Image
             style={{
-              flex: 1,
+              // backgroundColor: 'red',
               alignSelf: 'center',
-              width: 400,
-              // height: 100,
+              height: 200,
+              width: 200,
+              marginHorizontal: 20,
             }}
             source={this.state.avatarSource}
             resizeMode="contain"
           />
         </View>
         <View style={styles.container3}>
-          <TouchableOpacity
-            style={{ backgroundColor: 'green', margin: 10, padding: 10 }}
-            onPress={this.PicImage}>
-            <Text style={{ color: '#fff' }}>Select Image</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={{ backgroundColor: 'green', margin: 10, padding: 10 }}
-            onPress={this.uploadPic}>
-            <Text style={{ color: '#fff' }}>Upload</Text>
-          </TouchableOpacity>
+          <View style={{ flex: 1, }}>
+            <TouchableOpacity
+              style={{
+                backgroundColor: '#6202EE', marginHorizontal: 10, paddingVertical: 12, justifyContent: 'center',
+                alignItems: 'center', elevation: 5, borderRadius: 5, marginVertical: 10,
+              }}
+              onPress={this.PicImage}>
+              <Text style={{
+                color: '#fff', fontSize: 15,
+                // fontWeight: 'bold',
+                textAlign: 'center',
+              }}>Select Image</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={{ flex: 1 }}>
+            <TouchableOpacity
+              style={{
+                backgroundColor: '#6202EE', paddingVertical: 12, justifyContent: 'center',
+                marginHorizontal: 10,
+                alignItems: 'center', elevation: 5, borderRadius: 5, marginVertical: 10,
+              }}
+              onPress={this.uploadPic}>
+              <Text style={{ color: '#fff' }}>Upload</Text>
+            </TouchableOpacity>
+          </View>
         </View>
 
+        <View style={{ padding: 20 }}>
 
-      
+          <Progress.Bar progress={this.state.total} width={200} height={50}
+            indeterminateAnimationDuration={2000}
+          />
+
+        </View>
+
         <View>
 
           <Button
@@ -146,9 +201,9 @@ export default class Home extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'center',
+    flex: 1,
     backgroundColor: '#F5FCFF',
   },
   welcome: {
@@ -164,17 +219,26 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   container2: {
-    flex: 0.8,
+    // flex: 0.8,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#000',
+    height: 200,
+    width: 200,
+    flexDirection: 'row',
+    borderColor: '#6202EE',
+    borderStyle: 'dashed',
+    borderWidth: 1,
+
+    // backgroundColor: 'yellow',
+    // backgroundColor: '#000',
   },
 
   container3: {
     // flex: 0.8,
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    flexDirection:'row',
+    flexDirection: 'row',
+    marginHorizontal: 10,
     backgroundColor: 'white',
   },
 });
