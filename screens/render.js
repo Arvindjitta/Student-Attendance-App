@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { ActivityIndicator, FlatList, Text, View, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { ActivityIndicator, FlatList, Text, View, TouchableOpacity, StyleSheet } from 'react-native';
 import RNFetchBlob from 'rn-fetch-blob';
 import * as Progress from 'react-native-progress';
+import Image from 'react-native-image-progress';
+
 
 
 
@@ -60,6 +62,18 @@ export default class Criminal extends Component {
           }}
           source={{ uri: 'http://book-test-cover.herokuapp.com/' + this.state.cover }}
           resizeMode="contain"
+          indicator={Progress.Pie}
+          indicatorProps={{
+            size: 80,
+            borderWidth: 0,
+            color: 'rgba(150, 150, 150, 1)',
+            unfilledColor: 'rgba(200, 200, 200, 0.2)'
+          }}
+
+          style={{
+            width: 320,
+            height: 240,
+          }}
         />
       </View>
     );

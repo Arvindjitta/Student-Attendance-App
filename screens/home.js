@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, Button, PermissionsAndroid } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import RNFetchBlob from 'rn-fetch-blob';
-import * as Progress from 'react-native-progress';
+import { Header, LargeText, ProgressBar, IconButton } from '../components/index';
+
+
+
 
 const options = {
   title: '',
@@ -56,6 +59,9 @@ export default class Home extends Component {
 
   // To retrive images from the mobile
   PicImage = () => {
+    const options = {
+      quality: 0.5
+    };
     //alert('clicked');
     ImagePicker.showImagePicker(options, response => {
       console.log('Response = ', response);
@@ -113,87 +119,133 @@ export default class Home extends Component {
   };
 
   render() {
+    const { navigate } = this.props.navigation;
 
-    const { navigation } = this.props;
+    // const { navigation } = this.props;
 
     return (
       <View style={styles.container}>
 
-        <TextInput
-          placeholder="Name"
-          style={styles.input}
-          onChangeText={text => this.updateValue(text, 'title')}
-        />
+        <View style={{
+          alignItems: 'center',
+          backgroundColor: '#F5FCFF',
+        }}>
 
-        <View style={styles.container2}>
-          <Image
-            style={{
-              // backgroundColor: 'red',
-              alignSelf: 'center',
-              height: 200,
-              width: 200,
-              marginHorizontal: 20,
-            }}
-            source={this.state.avatarSource}
-            resizeMode="contain"
-          />
-        </View>
-        <View style={styles.container3}>
-          <View style={{ flex: 1, }}>
-            <TouchableOpacity
-              style={{
-                backgroundColor: '#6202EE', marginHorizontal: 10, paddingVertical: 12, justifyContent: 'center',
-                alignItems: 'center', elevation: 5, borderRadius: 5, marginVertical: 10,
-              }}
-              onPress={this.PicImage}>
-              <Text style={{
-                color: '#fff', fontSize: 15,
-                // fontWeight: 'bold',
-                textAlign: 'center',
-              }}>Select Image</Text>
-            </TouchableOpacity>
+          <Header menuColor={"#7519FB"} />
+
+          <View style={{ alignSelf: 'stretch', marginHorizontal: 30, paddingTop: 70 }}>
+            <LargeText
+              text={'Upload picture'}
+            />
           </View>
-          <View style={{ flex: 1 }}>
-            <TouchableOpacity
-              style={{
-                backgroundColor: '#6202EE', paddingVertical: 12, justifyContent: 'center',
-                marginHorizontal: 10,
-                alignItems: 'center', elevation: 5, borderRadius: 5, marginVertical: 10,
-              }}
-              onPress={this.uploadPic}>
-              <Text style={{ color: '#fff' }}>Upload</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
 
-        <View style={{ padding: 20 }}>
-
-          <Progress.Bar progress={this.state.total} width={200} height={50}
-            indeterminateAnimationDuration={2000}
+          {/* use it for sending route.param.parmkey */}
+          <TextInput
+            placeholder="Name"
+            style={styles.input}
+            onChangeText={text => this.updateValue(text, 'title')}
           />
 
+
+          {/* Dashed Image Container */}
+
+          <View style={styles.container2}>
+            <Image
+              style={{
+                // backgroundColor: 'red',
+                alignSelf: 'center',
+                height: 190,
+                borderRadius: 10,
+                width: '100%',
+                // marginHorizontal: 20,
+              }}
+              source={this.state.avatarSource}
+              resizeMode="contain"
+            />
+          </View>
+
+          {/* Slider */}
+
+          <View style={{ alignSelf: 'stretch', marginHorizontal: 30, paddingVertical: 10 }}>
+            <ProgressBar barcolor={'rgba(255, 190, 190, 100)'} total={this.state.total} />
+          </View>
+
+
+
+
+          <View style={styles.container3}>
+            <View style={{ flex: 1, }}>
+              <TouchableOpacity
+                style={{
+                  backgroundColor: '#6202EE', marginHorizontal: 10, height: 60, justifyContent: 'center',
+                  alignItems: 'center', elevation: 5, borderRadius: 5,
+                }}
+                onPress={this.PicImage}>
+                <Text style={{
+                  color: '#fff', fontSize: 15,
+                  // fontWeight: 'bold',
+                  textAlign: 'center',
+                }}>Select Image</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={{ flex: 1 }}>
+              <TouchableOpacity
+                style={{
+                  backgroundColor: '#6202EE', justifyContent: 'center',
+                  marginHorizontal: 10,
+                  alignItems: 'center', elevation: 5, borderRadius: 5, height: 60, marginVertical: 10,
+                }}
+                onPress={this.uploadPic}>
+                <Text style={{ color: '#fff' }}>Upload</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
 
-        <View>
 
-          <Button
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignSelf: 'stretch', marginHorizontal: 20, height: 70, alignItems: 'center' }}>
+          {/* TAKES TO FIRST DETAILS SCREEN */}
+          <TouchableOpacity onPress={() => {
+            navigate("Criminal");
+          }}>
+            <IconButton iconName={"chevron-left"} menuColor={"#6202EE"} text={"BACK"} iconSideLeft={true} />
+          </TouchableOpacity>
+
+          {/* RENDER SCREEN */}
+
+          <TouchableOpacity onPress={() => {
+            navigate("Render");
+          }}>
+            <IconButton iconName={"chevron-right"} menuColor={"#6202EE"} text={"NEXT"} iconSideLeft={false} />
+          </TouchableOpacity>
+        </View>
+
+
+
+
+
+        {/* <View> */}
+
+        {/* <Button
 
             navigation={this.props.navigation}
             title="go to criminals"
             onPress={() =>
               navigation.navigate('Criminal')}
-          />
+          /> */}
 
 
-          <Button
+
+
+        {/* <Button
 
             navigation={this.props.navigation}
             title="go to Render"
             onPress={() =>
               navigation.navigate('Render')}
-          />
+          /> */}
 
-        </View>
+        {/* </View> */}
       </View>
     );
   }
@@ -204,6 +256,7 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
+    justifyContent: 'space-between',
     backgroundColor: '#F5FCFF',
   },
   welcome: {
@@ -223,23 +276,24 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: 200,
-    width: 200,
+    alignSelf: "stretch",
+    marginHorizontal: 30,
     flexDirection: 'row',
-    borderColor: '#6202EE',
+    borderColor: '#FFBEBE',
+    borderRadius: 10,
+    marginTop: 30,
     borderStyle: 'dashed',
-    borderWidth: 1,
-
+    borderWidth: 2,
     // backgroundColor: 'yellow',
     // backgroundColor: '#000',
   },
-
+  //koool--Goolk--koool--buttton--//
   container3: {
     // flex: 0.8,
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
-    marginHorizontal: 10,
-    backgroundColor: 'white',
+    marginHorizontal: 20,
   },
 });
 
