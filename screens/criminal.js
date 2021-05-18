@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, Button, Per
 import ImagePicker from 'react-native-image-picker';
 import RNFetchBlob from 'rn-fetch-blob';
 import { Header, LargeText, ProgressBar, IconButton } from '../components/index';
+import { Dropdown } from 'react-native-material-dropdown-v2';
 
 
 
@@ -17,17 +18,21 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      avatarSource: null,
-      pic: null,
-      cover: null,
-      title: '',
-      total: null,
+      classDetails: null,
+      selectedValue: null,
+      branchValue: null,
+      yearValue: null,
+      sectionValue: null,
+      semisterValue: null,
+
+
       // written: null,
       // total: 1000,
     };
   }
 
   componentDidMount() {
+
     if (Platform.OS === 'android') {
       PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.CAMERA).then((result) => {
         if (result) {
@@ -117,11 +122,60 @@ export default class Home extends Component {
       this.setState({ total: null });
     });
   };
+  onChangeHandler = (value) => {
+    this.setState({ semisterValue: value })
+    var van = this.state.branchValue + '-' + this.state.yearValue + '-' + this.state.sectionValue + '-' + this.state.semisterValue
+    this.setState({ classDetails: van })
+    var det = this.state.classDetails
+    console.log({ det })
+
+  }
 
   render() {
-    const { navigate } = this.props.navigation;
+    const { navigate } = this.props.navigation
+    var van = this.state.yearValue + '-' + this.state.branchValue + '-' + this.state.sectionValue + '-' + this.state.semisterValue
+    console.log({ van })
+    // this.setState({classDetails: van})
 
-    // const { navigation } = this.props;
+    let branchValue = [{
+      value: 'CSE',
+    }, {
+      value: 'EEE',
+    }, {
+      value: 'ECE',
+    }, {
+      value: 'CIVIL',
+    }, {
+      value: 'MECH',
+    }, {
+      value: 'IT',
+    }];
+
+    let yearValue = [{
+      value: 'I',
+    }, {
+      value: 'II',
+    }, {
+      value: 'III',
+    }, {
+      value: 'IV',
+    }];
+
+    let sectionValue = [{
+      value: 'A',
+    }, {
+      value: 'B',
+    }, {
+      value: 'C',
+    }, {
+      value: 'D',
+    }];
+
+    let semisterValue = [{
+      value: '1st sem',
+    }, {
+      value: '2nd sem',
+    }];
 
     return (
       <View style={styles.container}>
@@ -153,67 +207,71 @@ export default class Home extends Component {
           </View>
 
           {/* TextHeading */}
-          <View style={{ alignSelf: 'stretch',
-          
-          marginHorizontal: 30, paddingTop: 30 }}>
+          <View style={{
+            alignSelf: 'stretch',
+            marginHorizontal: 30, paddingTop: 30
+          }}>
             <LargeText
               text={'Enter details'}
             />
           </View>
           {/* <Text style={{backgroundColor:'pink'}}>dd</Text> */}
           <View style={styles.container3}>
+            {/* Branch */}
             <View style={{ flex: 1, }}>
-              <TouchableOpacity
-                style={{
-                  backgroundColor: '#6202EE', marginHorizontal: 10, height: 60, justifyContent: 'center',
-                  alignItems: 'center', elevation: 5, borderRadius: 5,
-                }}
-                onPress={this.PicImage}>
-                <Text style={{
-                  color: '#fff', fontSize: 15,
-                  // fontWeight: 'bold',
-                  textAlign: 'center',
-                }}>Select Image</Text>
-              </TouchableOpacity>
+              <View style={{ marginHorizontal: 10, }}>
+                <Dropdown
+                  label='Branch'
+                  useNativeDriver={true}
+                  // animationDuration={10}
+                  data={branchValue}
+                  // dropdownOffset={15,2}
+                  onChangeText={value => this.setState({ branchValue: value })}
+                />
+              </View>
             </View>
+            {/* Class */}
             <View style={{ flex: 1 }}>
-              <TouchableOpacity
-                style={{
-                  backgroundColor: '#6202EE', justifyContent: 'center',
-                  marginHorizontal: 10,
-                  alignItems: 'center', elevation: 5, borderRadius: 5, height: 60, 
-                }}
-                onPress={this.uploadPic}>
-                <Text style={{ color: '#fff' }}>Upload</Text>
-              </TouchableOpacity>
+              <View style={{ marginHorizontal: 10, }}>
+                <Dropdown
+                  label='Year'
+                  useNativeDriver={true}
+                  // animationDuration={10}
+                  data={yearValue}
+                  onChangeText={value => this.setState({ yearValue: value })}
+                />
+              </View>
             </View>
           </View>
-          {/*  */}
+          {/* Second Part */}
           <View style={styles.container3}>
+            {/* Section */}
             <View style={{ flex: 1, }}>
-              <TouchableOpacity
-                style={{
-                  backgroundColor: '#6202EE', marginHorizontal: 10, height: 60, justifyContent: 'center',
-                  alignItems: 'center', elevation: 5, borderRadius: 5,
-                }}
-                onPress={this.PicImage}>
-                <Text style={{
-                  color: '#fff', fontSize: 15,
-                  // fontWeight: 'bold',
-                  textAlign: 'center',
-                }}>Select Image</Text>
-              </TouchableOpacity>
+              <View style={{ marginHorizontal: 10, }}>
+                <Dropdown
+                  label='Section'
+                  useNativeDriver={true}
+                  animationDuration={10}
+                  data={sectionValue}
+
+                  onChangeText={value => this.setState({ sectionValue: value })}
+                />
+              </View>
             </View>
+            {/* Semister */}
             <View style={{ flex: 1 }}>
-              <TouchableOpacity
-                style={{
-                  backgroundColor: '#6202EE', justifyContent: 'center',
-                  marginHorizontal: 10,
-                  alignItems: 'center', elevation: 5, borderRadius: 5, height: 60, 
-                }}
-                onPress={this.uploadPic}>
-                <Text style={{ color: '#fff' }}>Upload</Text>
-              </TouchableOpacity>
+              <View style={{ marginHorizontal: 10, }}>
+                <Dropdown
+                  label='Semister'
+                  useNativeDriver={true}
+                  animationDuration={10}
+                  data={semisterValue}
+                  // onChangeText={value => this.setState({semisterValue:value})}   
+                  onChangeText={value => this.onChangeHandler(value)}
+
+
+                />
+              </View>
             </View>
           </View>
 
@@ -231,7 +289,11 @@ export default class Home extends Component {
           {/* RENDER SCREEN */}
 
           <TouchableOpacity onPress={() => {
-            navigate("home");
+
+            // this.props.navigation.navigate('home', {
+            //   paramKey: van,
+            // })
+            navigate('Home', { paramKey: van });
           }}>
             <IconButton iconName={"chevron-right"} menuColor={"#6202EE"} text={"NEXT"} iconSideLeft={false} />
           </TouchableOpacity>
@@ -267,6 +329,10 @@ export default class Home extends Component {
     );
   }
 }
+
+
+
+
 
 const styles = StyleSheet.create({
   container: {

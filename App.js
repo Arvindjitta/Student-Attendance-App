@@ -15,17 +15,17 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        {/* <Stack.Screen
+      <Stack.Navigator initialRouteName="Criminal">
+        <Stack.Screen name="Criminal" component={Criminal} options={{
+            title: 'Criminal Screen', headerShown: false
+          }}/>
+        <Stack.Screen
           name="Home"
           component={HomeScreen}
           options={{
             title: 'Criminal Face Recognition App', headerShown: false
           }}
-        /> */}
-        <Stack.Screen name="Criminal" component={Criminal} options={{
-            title: 'Criminal Screen', headerShown: false
-          }}/>
+        />
         <Stack.Screen name="Render" component={Render} />
 
       </Stack.Navigator>

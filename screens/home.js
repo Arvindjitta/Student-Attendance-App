@@ -22,12 +22,15 @@ export default class Home extends Component {
       cover: null,
       title: '',
       total: null,
+      // paramkey: props.route.params.paramKey,
       // written: null,
       // total: 1000,
     };
+    
   }
 
   componentDidMount() {
+    
     if (Platform.OS === 'android') {
       PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.CAMERA).then((result) => {
         if (result) {
@@ -119,9 +122,14 @@ export default class Home extends Component {
   };
 
   render() {
-    const { navigate } = this.props.navigation;
-
+    const { route } = this.props;  
+    const { navigate } = this.props.navigation;  
+    const param_key = route.params.paramKey
+    // console.log({param_key})
+    // console.log({title})
+    // {JSON.stringify(paramKey)}
     // const { navigation } = this.props;
+    // const { paramKey } = route.params;
 
     return (
       <View style={styles.container}>
@@ -135,16 +143,18 @@ export default class Home extends Component {
 
           <View style={{ alignSelf: 'stretch', marginHorizontal: 30, paddingTop: 70 }}>
             <LargeText
-              text={'Upload picture'}
+              text= {param_key}
             />
+            <Text>{this.updateValue(param_key, 'title')}</Text>
+           
           </View>
 
           {/* use it for sending route.param.parmkey */}
-          <TextInput
+          {/* <TextInput
             placeholder="Name"
             style={styles.input}
             onChangeText={text => this.updateValue(text, 'title')}
-          />
+          /> */}
 
 
           {/* Dashed Image Container */}
