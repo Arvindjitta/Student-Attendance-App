@@ -145,16 +145,16 @@ export default class Home extends Component {
             <LargeText
               text= {param_key}
             />
-            <Text>{this.updateValue(param_key, 'title')}</Text>
+            {/* <Text>{this.updateValue(param_key, 'title')}</Text> */}
            
           </View>
 
           {/* use it for sending route.param.parmkey */}
-          {/* <TextInput
+          <TextInput
             placeholder="Name"
             style={styles.input}
             onChangeText={text => this.updateValue(text, 'title')}
-          /> */}
+          />
 
 
           {/* Dashed Image Container */}
