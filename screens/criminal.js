@@ -31,28 +31,28 @@ export default class Home extends Component {
     };
   }
 
-  componentDidMount() {
+  // componentDidMount() {
 
-    if (Platform.OS === 'android') {
-      PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.CAMERA).then((result) => {
-        if (result) {
-          console.log("Permission is OK for camera checked");
-        } else {
-          PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.CAMERA).then((result) => {
-            if (result) {
-              console.log("Permission is OK for camera requested");
-            } else if (result) {
-              console.log("User refuse");
-            }
-            else {
-              console.log("User refuse");
+  //   if (Platform.OS === 'android') {
+  //     PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.CAMERA).then((result) => {
+  //       if (result) {
+  //         console.log("Permission is OK for camera checked");
+  //       } else {
+  //         PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.CAMERA).then((result) => {
+  //           if (result) {
+  //             console.log("Permission is OK for camera requested");
+  //           } else if (result) {
+  //             console.log("User refuse");
+  //           }
+  //           else {
+  //             console.log("User refuse");
 
-            }
-          });
-        }
-      });
-    }
-  }
+  //           }
+  //         });
+  //       }
+  //     });
+  //   }
+  // }
 
   updateValue(text, field) {
     if (field == 'title') {
@@ -134,7 +134,7 @@ export default class Home extends Component {
   render() {
     const { navigate } = this.props.navigation
     var van = this.state.yearValue + '-' + this.state.branchValue + '-' + this.state.sectionValue + '-' + this.state.semisterValue
-    console.log({ van })
+    // console.log({ van })
     // this.setState({classDetails: van})
 
     let branchValue = [{

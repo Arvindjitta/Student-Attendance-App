@@ -13,6 +13,8 @@ const options = {
   chooseFromLibraryButtonTitle: 'Choose photo from library',
 };
 
+  
+
 export default class Home extends Component {
   constructor(props) {
     super(props);
@@ -26,7 +28,9 @@ export default class Home extends Component {
       // written: null,
       // total: 1000,
     };
-    
+    const { route } = this.props;  
+    const param_key = route.params.paramKey
+    this.setState({title:param_key})
   }
 
   componentDidMount() {
@@ -51,6 +55,8 @@ export default class Home extends Component {
       });
     }
   }
+
+  
 
   updateValue(text, field) {
     if (field == 'title') {
@@ -85,6 +91,10 @@ export default class Home extends Component {
         });
       }
     });
+    const { route } = this.props;  
+    const param_key = route.params.paramKey
+    this.setState({title:param_key})
+    console.log(this.state.title)
   };
 
 
@@ -125,6 +135,9 @@ export default class Home extends Component {
     const { route } = this.props;  
     const { navigate } = this.props.navigation;  
     const param_key = route.params.paramKey
+    // this.updateValue(param_key, 'title')
+    // this.updateValue(param_key, 'title')
+
     // console.log({param_key})
     // console.log({title})
     // {JSON.stringify(paramKey)}
@@ -150,11 +163,11 @@ export default class Home extends Component {
           </View>
 
           {/* use it for sending route.param.parmkey */}
-          <TextInput
+          {/* <TextInput
             placeholder="Name"
             style={styles.input}
             onChangeText={text => this.updateValue(text, 'title')}
-          />
+          /> */}
 
 
           {/* Dashed Image Container */}
@@ -224,7 +237,7 @@ export default class Home extends Component {
           {/* RENDER SCREEN */}
 
           <TouchableOpacity onPress={() => {
-            navigate("Render");
+            navigate('Render',{ paramKey: this.state.title });
           }}>
             <IconButton iconName={"chevron-right"} menuColor={"#6202EE"} text={"NEXT"} iconSideLeft={false} />
           </TouchableOpacity>
