@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ActivityIndicator, FlatList, Text, View, TouchableOpacity, StyleSheet } from 'react-native';
+import { ActivityIndicator, FlatList, Text, View, TouchableOpacity, StyleSheet, ToastAndroid } from 'react-native';
 import RNFetchBlob from 'rn-fetch-blob';
 import * as Progress from 'react-native-progress';
 import Image from 'react-native-image-progress';
@@ -83,12 +83,20 @@ export default class Criminal extends Component {
       <View style={styles.container}>
         <Header menuColor={"#7519FB"} />
 
-        <View style={{ alignSelf: 'stretch', marginHorizontal: 30, paddingTop: 30,}}>
-          <LargeText
-            text={'Result:'}
-          />
-          <NormalText text={this.state.title} />
-          {/* <Text>{this.updateValue(param_key, 'title')}</Text> */}
+        <View style={{ alignSelf: 'stretch', marginHorizontal: 30, paddingTop: 30, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+          <View>
+            <LargeText
+              text={'Result:'}
+            />
+            <NormalText text={this.state.title} />
+            {/* <Text>{this.updateValue(param_key, 'title')}</Text> */}
+          </View>
+          <View>
+            <Text style={{ fontSize: 16, fontFamily: "WorkSans-Medium", color: '#6202EE' }}>{isLoading ? "Loading..." : "Loaded 👍"}</Text>
+            {isLoading ? ToastAndroid.show("Please be patient 🙏 ", ToastAndroid.CENTER, ToastAndroid.LONG,) : null}
+            {isLoading ? ToastAndroid.show("It takes some time for recognizing 🕒", ToastAndroid.CENTER, ToastAndroid.LONG,) : null}
+            {isLoading ? ToastAndroid.show("Our algorithm is working on it 💪", ToastAndroid.TOP, ToastAndroid.LONG,) : ToastAndroid.show("It Loaded successfully 🎉, Click Next", ToastAndroid.CENTER, ToastAndroid.LONG,)}
+          </View>
 
         </View>
 
@@ -149,12 +157,13 @@ export default class Criminal extends Component {
           </TouchableOpacity>
 
           {/* RENDER SCREEN */}
-
-          <TouchableOpacity onPress={() => {
+          {isLoading ? null : <TouchableOpacity onPress={() => {
             navigate('Dashboard');
           }}>
             <IconButton iconName={"chevron-right"} menuColor={"#6202EE"} text={"NEXT"} iconSideLeft={false} />
-          </TouchableOpacity>
+          </TouchableOpacity>}
+
+
         </View>
       </View>
 

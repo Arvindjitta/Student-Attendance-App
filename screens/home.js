@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, Button, PermissionsAndroid } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, Button, PermissionsAndroid, ToastAndroid } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import RNFetchBlob from 'rn-fetch-blob';
 import { Header, LargeText, ProgressBar, IconButton } from '../components/index';
@@ -13,7 +13,7 @@ const options = {
   chooseFromLibraryButtonTitle: 'Choose photo from library',
 };
 
-  
+
 
 export default class Home extends Component {
   constructor(props) {
@@ -28,13 +28,13 @@ export default class Home extends Component {
       // written: null,
       // total: 1000,
     };
-    const { route } = this.props;  
+    const { route } = this.props;
     const param_key = route.params.paramKey
-    this.setState({title:param_key})
+    this.setState({ title: param_key })
   }
 
   componentDidMount() {
-    
+
     if (Platform.OS === 'android') {
       PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.CAMERA).then((result) => {
         if (result) {
@@ -56,7 +56,7 @@ export default class Home extends Component {
     }
   }
 
-  
+
 
   updateValue(text, field) {
     if (field == 'title') {
@@ -91,9 +91,9 @@ export default class Home extends Component {
         });
       }
     });
-    const { route } = this.props;  
+    const { route } = this.props;
     const param_key = route.params.paramKey
-    this.setState({title:param_key})
+    this.setState({ title: param_key })
     console.log(this.state.title)
   };
 
@@ -125,15 +125,16 @@ export default class Home extends Component {
       console.log('uploaded', total);
     }).then(resp => {
       console.log(resp);
-      alert('your image uploaded successfully');
+      ToastAndroid.show("image uploaded successfully, click next", ToastAndroid.LONG)
+      // alert('your image uploaded successfully');
       this.setState({ avatarSource: null });
       this.setState({ total: null });
     });
   };
 
   render() {
-    const { route } = this.props;  
-    const { navigate } = this.props.navigation;  
+    const { route } = this.props;
+    const { navigate } = this.props.navigation;
     const param_key = route.params.paramKey
     // this.updateValue(param_key, 'title')
     // this.updateValue(param_key, 'title')
@@ -156,10 +157,10 @@ export default class Home extends Component {
 
           <View style={{ alignSelf: 'stretch', marginHorizontal: 30, paddingTop: 70 }}>
             <LargeText
-              text= {param_key}
+              text={param_key}
             />
             {/* <Text>{this.updateValue(param_key, 'title')}</Text> */}
-           
+
           </View>
 
           {/* use it for sending route.param.parmkey */}
@@ -237,7 +238,7 @@ export default class Home extends Component {
           {/* RENDER SCREEN */}
 
           <TouchableOpacity onPress={() => {
-            navigate('Render',{ paramKey: this.state.title });
+            navigate('Render', { paramKey: this.state.title });
           }}>
             <IconButton iconName={"chevron-right"} menuColor={"#6202EE"} text={"NEXT"} iconSideLeft={false} />
           </TouchableOpacity>
