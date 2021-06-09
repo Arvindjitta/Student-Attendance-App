@@ -23,12 +23,17 @@ Keywords: Face recognition, Face detection,Convolution Neural Network(CNN).
 
 # How To use the App:
 
-Go to the link below, you will find apk and a video expalining how to you 
+Go to the link below, you will find apk and a video expalining how to use the app.
 https://drive.google.com/drive/folders/1dotDqEL1-rXWxpjzJ23MMawXWF8FaNPV?usp=sharing
 
-FRONTEND:- https://github.com/Arvindjitta/Student-Attendance-App
-FRONTEND MODIFIED UI (Just UI):- https://github.com/Arvindjitta/Student-Attendance-App-UI
-BACKEND :- https://github.com/Arvindjitta/Project-X
+#FRONTEND:-
+https://github.com/Arvindjitta/Student-Attendance-App
+
+#FRONTEND MODIFIED UI (Just UI):- 
+https://github.com/Arvindjitta/Student-Attendance-App-UI
+
+#BACKEND :- 
+https://github.com/Arvindjitta/Project-X
 
 ## Languages
 
