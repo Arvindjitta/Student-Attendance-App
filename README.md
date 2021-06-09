@@ -21,9 +21,14 @@ attendance so that the attendance database can be easily reflected automatically
 
 Keywords: Face recognition, Face detection,Convolution Neural Network(CNN).
 
-FRONTEND:- 
-FRONTEND MODIFIED UI (Just UI):- 
-BACKEND :- 
+# How To use the App:
+
+Go to the link below, you will find apk and a video expalining how to you 
+https://drive.google.com/drive/folders/1dotDqEL1-rXWxpjzJ23MMawXWF8FaNPV?usp=sharing
+
+FRONTEND:- https://github.com/Arvindjitta/Student-Attendance-App
+FRONTEND MODIFIED UI (Just UI):- https://github.com/Arvindjitta/Student-Attendance-App-UI
+BACKEND :- https://github.com/Arvindjitta/Project-X
 
 ## Languages
 
